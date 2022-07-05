@@ -10,11 +10,27 @@ public class EnemyMover : MonoBehaviour
         
     void Start()
     {
-        
+        FindPath();
+        ReturnToStart();
         StartCoroutine(FollowPath());  // look it up. It is a way to "yield" control of the processor.
         
     }
     
+    void FindPath()
+    {
+        path.Clear();
+        
+        GameObject waypointsParent = GameObject.FindGameObjectWithTag("Path");  //Find parent
+        foreach(Transform waypoint in waypointsParent.transform)  // Loop thru children
+        {
+            path.Add(waypoint.GetComponent<Waypoint>());
+        }
+    }
+    void ReturnToStart()
+    {
+        transform.position = path[0].transform.position;
+    }
+
     IEnumerator FollowPath()  //IEnumerator is "something" enumerable
     {
         foreach(Waypoint waypoint in path)
@@ -31,10 +47,7 @@ public class EnemyMover : MonoBehaviour
                 this.transform.position = Vector3.Lerp(startPosition,endPosition, travelPercent);
                 yield return new WaitForEndOfFrame();
             }
-            
-            
-            //this.transform.position = waypoint.transform.position;
-            //yield return new WaitForSeconds(waitTime);
         }
+        Destroy(gameObject);
     }
 }
