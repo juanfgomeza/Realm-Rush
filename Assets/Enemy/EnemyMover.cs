@@ -7,7 +7,9 @@ public class EnemyMover : MonoBehaviour
     
     [SerializeField] List<Waypoint> path = new List<Waypoint>();  //This Waypoint is used instead of tags, not relying on strings
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
-        
+
+    Enemy enemy;
+
     void OnEnable()
     {
         FindPath();
@@ -15,7 +17,12 @@ public class EnemyMover : MonoBehaviour
         StartCoroutine(FollowPath());  // look it up. It is a way to "yield" control of the processor.
         
     }
-    
+
+    void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
+
     void FindPath()
     {
         path.Clear();
@@ -48,6 +55,7 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
-        this.gameObject.SetActive(false);
+        enemy.StealGold();
+        this.gameObject.SetActive(false);        
     }
 }
