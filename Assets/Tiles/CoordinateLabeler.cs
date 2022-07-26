@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 
 [ExecuteAlways]  // This would allow to execute always, even in Edit mode
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.black;
@@ -29,7 +30,7 @@ public class CoordinateLabeler : MonoBehaviour
             UpdateObjectName();            
         }
 
-        ColorCoordinates();
+        SetLabelColor();
         ToggleLabels();
         
     }
@@ -46,7 +47,7 @@ public class CoordinateLabeler : MonoBehaviour
         transform.parent.name = coordinates.ToString();
     }
 
-    void ColorCoordinates()
+    void SetLabelColor()
     {
         if(waypoint.IsPlaceable)
         {
