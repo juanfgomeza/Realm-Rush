@@ -1704,6 +1704,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 8,4
@@ -1773,6 +1777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 6,5
@@ -2344,6 +2352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 9,4
@@ -2935,6 +2947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 6,4
@@ -4273,6 +4289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 8,5
@@ -5191,6 +5211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 9,5
@@ -6389,6 +6413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 10,4
@@ -6524,6 +6552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 7,4
@@ -6675,6 +6707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 7,5
@@ -6889,6 +6925,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 879678085}
     m_Modifications:
+    - target: {fileID: 279470065917498005, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1502148766397419642, guid: 5cba8a3552265084b969478ba151e3b8, type: 3}
       propertyPath: m_text
       value: 10,5
