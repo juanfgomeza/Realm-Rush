@@ -7,10 +7,10 @@ using TMPro;
 [RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
-    [SerializeField] Color defaultColor = Color.white;
-    [SerializeField] Color blockedColor = Color.gray;
-    [SerializeField] Color exploredColor = Color.yellow;
-    [SerializeField] Color pathColor = Color.black;
+    Color defaultColor = Color.white;
+    Color blockedColor = Color.gray;
+    Color exploredColor = Color.yellow;
+    Color pathColor = Color.red;
 
     
     TextMeshPro label;
@@ -40,10 +40,12 @@ public class CoordinateLabeler : MonoBehaviour
 
     void DisplayCoordinates()
     {
-        coordinates.x = Mathf.RoundToInt(this.transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(this.transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        if(gridManager == null) { return; }
+
+        coordinates.x = Mathf.RoundToInt(this.transform.parent.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(this.transform.parent.position.z / gridManager.UnityGridSize);
         label.text = coordinates.x + "," + coordinates.y;
-    }
+    }   
 
     void UpdateObjectName()
     {
@@ -53,6 +55,7 @@ public class CoordinateLabeler : MonoBehaviour
     void SetLabelColor()
     {
         if(gridManager == null) { return; }
+        
         
         Node node = gridManager.GetNode(coordinates);
 
@@ -72,12 +75,7 @@ public class CoordinateLabeler : MonoBehaviour
         }
         else{
             label.color = defaultColor;
-        }
-
-
-        
-        
-        
+        }        
     }
 
     void ToggleLabels()

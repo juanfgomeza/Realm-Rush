@@ -6,10 +6,13 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     
-    [SerializeField] List<Waypoint> path = new List<Waypoint>();  //This Waypoint is used instead of tags, not relying on strings
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
 
+    List<Node> path = new List<Node>();
+
     Enemy enemy;
+    GridManager gridManager;
+    Pathfinder pathfinder;
 
     void OnEnable()
     {
@@ -19,29 +22,24 @@ public class EnemyMover : MonoBehaviour
         
     }
 
-    void Start()
+    void Awake()
     {
         enemy = GetComponent<Enemy>();
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
     }
 
     void FindPath()
     {
         path.Clear();
+        path = pathfinder.GetNewPath();
         
-        GameObject waypointsParent = GameObject.FindGameObjectWithTag("Path");  //Find parent
-        foreach(Transform child in waypointsParent.transform)  // Loop thru children
-        {
-            Waypoint waypoint = child.GetComponent<Waypoint>();
-            if(waypoint != null)
-            {
-                path.Add(waypoint);
-            }
-            
-        }
+        
     }
     void ReturnToStart()
     {
-        transform.position = path[0].transform.position;
+        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
+
     }
 
     void FinishPath()
@@ -52,10 +50,10 @@ public class EnemyMover : MonoBehaviour
 
     IEnumerator FollowPath()  //IEnumerator is "something" enumerable
     {
-        foreach(Waypoint waypoint in path)
+        for(int i = 0; i < path.Count; i++)
         {
             Vector3 startPosition = this.transform.position;
-            Vector3 endPosition = waypoint.transform.position;
+            Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
             float travelPercent = 0f;
             
             this.transform.LookAt(endPosition);
