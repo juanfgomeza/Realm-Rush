@@ -8404,6 +8404,10 @@ PrefabInstance:
       propertyPath: displayBalance
       value: 
       objectReference: {fileID: 869019585}
+    - target: {fileID: 4356621008103606507, guid: 1abbf19840851a445bdb0e345b4c7b90, type: 3}
+      propertyPath: startingBalance
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1abbf19840851a445bdb0e345b4c7b90, type: 3}
 --- !u!1001 &4411106638005414958

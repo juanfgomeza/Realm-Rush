@@ -16,9 +16,8 @@ public class EnemyMover : MonoBehaviour
 
     void OnEnable()
     {
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());  // look it up. It is a way to "yield" control of the processor.
+        RecalculatePath(true);  
         
     }
 
@@ -29,10 +28,22 @@ public class EnemyMover : MonoBehaviour
         pathfinder = FindObjectOfType<Pathfinder>();
     }
 
-    void FindPath()
+    void RecalculatePath(bool resetPath)
     {
+        Vector2Int coordinates = new Vector2Int();
+        if(resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+        
+        StopAllCoroutines();
         path.Clear();
-        path = pathfinder.GetNewPath();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());  // look it up. It is a way to "yield" control of the processor.
         
         
     }
@@ -50,7 +61,7 @@ public class EnemyMover : MonoBehaviour
 
     IEnumerator FollowPath()  //IEnumerator is "something" enumerable
     {
-        for(int i = 0; i < path.Count; i++)
+        for(int i = 1; i < path.Count; i++)
         {
             Vector3 startPosition = this.transform.position;
             Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
