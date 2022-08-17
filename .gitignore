@@ -2,4 +2,5 @@ Temp/
 Library/
 Assets/AssetPacks/
 Builds/
-
+Assembly-CSharp.csproj
+Assets/Scenes/Game_world.unity
